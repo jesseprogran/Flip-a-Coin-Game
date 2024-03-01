@@ -53,8 +53,42 @@ body {
 
 button {
   width: 120px;
-  padding: 18px 0;
+  padding: 10px 0;
   border: 2.5px solid #06768c;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#flip-button {
+  background: #06768c;
+  color: #fff;
+}
+
+#flip-button:disabled {
+  background-color: #e1e1ee;
+  color: #101020;
+  border-color: #e1e1ee;
+}
+
+#reset-button {
+  background: #fff;
+  color: #424ae0;
+}
+
+@keyframes spin-tails {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(1980deg);
+  }
+}
+
+@keyframes spin-heads {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(2160deg);
+  }
 }
