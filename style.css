@@ -9,9 +9,22 @@
 
 body {
   height: 100%;
-  background: linear-gradient(to right, #57cde5 50%, #fcf9f9 50%) fixed;
+  background: linear-gradient(to right, #066555 50%, #fcf9f9 50%) fixed;
 }
 
+.title {
+  text-align: center;
+  animation: slideDown 1s ease forwards;
+}
+
+.title h1 {
+  font-size: 40px;
+  font-weight: 900;
+  margin-top: 50px;
+  display: inline-block;
+  color: #ff5733;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 .container {
   background: #fff;
   width: 400px;
@@ -51,15 +64,28 @@ body {
   justify-content: space-between;
 }
 
+.coin img {
+  width: 145px;
+}
+
+.heads,
+.tails {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
 button {
   width: 120px;
   padding: 10px 0;
-  border: 2.5px solid #06768c;
   border-radius: 5px;
   cursor: pointer;
+  border: none;
 }
 
-#flip-button {
+#flip-button:hover {
   background: #06768c;
   color: #fff;
 }
@@ -70,9 +96,21 @@ button {
   border-color: #e1e1ee;
 }
 
-#reset-button {
-  background: #fff;
-  color: #424ae0;
+#reset-button:hover {
+  background: #000000;
+  color: #fbfbfb;
+  border: none;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes spin-tails {
